@@ -4,15 +4,8 @@ __author__ = 'Philipp Middendorf'
 __email__ = "philipp.middendorf@imr.uni-hannover.de"
 __status__ = "Development"
 
-# with pip install future
-try:
-    from xmlrpc.server import DocXMLRPCServer, DocXMLRPCRequestHandler
-except ImportError:
-    pass
-    # from DocXMLRPCServer import DocXMLRPCServer, DocXMLRPCRequestHandler
-    # TODO: check this error
 
-# requires pip install configparser
+from xmlrpc.server import DocXMLRPCServer, DocXMLRPCRequestHandler
 from configparser import ConfigParser
 import base64
 import threading
@@ -56,7 +49,7 @@ class ServerThread(threading.Thread):
         print('Setting up server at %s port %i' % (hostname, port))
         self.server = DocXMLRPCServer((hostname, port), AuthorizationRequestHandler, allow_none=True)
         self.server.register_introspection_functions()
-        self.server.set_server_name('pyCamera')
+        self.server.set_server_name('Camera Server')
         self.server.set_server_title('Camera Signal Provider')
 
     def __del__(self):
