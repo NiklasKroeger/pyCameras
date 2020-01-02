@@ -74,7 +74,7 @@ class server_ctrl():
 
     def start_img_server(self):
 
-        self.sender = imagezmq.ImageSender(connect_to='tcp://130.75.27.44:5555')
+        self.sender = imagezmq.ImageSender(connect_to='tcp://130.75.27.134:5555')
 
         self.rpi = socket.gethostname()  # send RPi hostname with each image
 

@@ -160,17 +160,17 @@ class Camera(CameraTemplate):
 
 if __name__ == "__main__":
   device_handle = Controller()
-  # cam = Camera(device_handle)
-  # cam.setTriggerMode('out')
+  cam = Camera(device_handle)
+  cam.setTriggerMode('out')
 
-  print(device_handle.listDevices())
-  # cam.setFramerate(20)
-  # cam.recv_live()
+  # print(device_handle.listDevices())
+  cam.setFramerate(20)
+  cam.recv_live()
 
-  # cam.prepareRecording(15)
-  # time.sleep(3)
-  # cam.record()
-  # time.sleep(3)
+  cam.prepareRecording(15)
+  time.sleep(3)
+  cam.record()
+  time.sleep(3)
 
   # cam.setResolution([1280,720])
   # cam.setResolution([3280, 2464]) not
