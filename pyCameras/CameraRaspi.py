@@ -16,7 +16,7 @@ from pyCameras.cameraTemplate import CameraTemplate
 from pyCameras.cameraTemplate import ControllerTemplate
 import pyCameras.serverFunctions as serverThread
 import time
-import PiCamera
+from picamera import PiCamera
 import smbus
 
 LOGGING_LEVEL = None
@@ -135,7 +135,7 @@ class Camera(CameraTemplate):
         """
         try:
             self.logger.debug('Opening camera device')
-            self.device = Picamera()
+            self.device = PiCamera()
         except Exception as e:
             self.logger.exception('Failed to open the camera device: '
                                   '{e}'.format(e=e))
