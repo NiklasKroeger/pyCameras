@@ -16,7 +16,7 @@ from pyCameras.cameraTemplate import CameraTemplate
 from pyCameras.cameraTemplate import ControllerTemplate
 import pyCameras.serverFunctions as serverThread
 import time
-import Picamera
+import PiCamera
 import smbus
 
 LOGGING_LEVEL = None
