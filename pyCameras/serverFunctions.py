@@ -49,7 +49,19 @@ def startCameraServer(camera):
     # server.register_function(camera.setColor, "setColor")
     # server.register_function(camera.setBrightness, "setBrightness")
     # server.register_function(camera.setTriggerMode, "setTriggerMode")
+
+    # setting measurement config
+    server.register_function(camera.openDevice, "openDevice")
+
+    # measurement functions
+
+    # end connection
+    server.register_function(camera.closeDevice, "closeDevice")
+
     # Test connection
+
     server.register_function(ping, "ping")
+    print("registered functions")
 
     serverThread.startServer()
+
