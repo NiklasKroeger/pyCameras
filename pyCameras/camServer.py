@@ -38,10 +38,12 @@ def Camera(settings_dict):
     return camera
 
 if __name__ == "__main__":
-    # from configparser import ConfigParser
-    # config = ConfigParser()
-    # settings_dict = config.read('serv.cfg')
-    settings_dict = {'user': "pi", 'password': "imr123!", 'host': "130.75.27.143", 'port': "8001"}
+    from configparser import ConfigParser
+    config = ConfigParser()
+    config.read('serv.cfg')
+    settings_dict = config._sections
+    # settings_dict = {'user': "pi", 'password': "imr123!", 'host': "130.75.27.143", 'port': "8001"}
     cam = Camera(settings_dict)
+    cam.openDevice()
     cam.closeDevice()
 
